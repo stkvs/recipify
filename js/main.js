@@ -1,6 +1,9 @@
 const recipeContainer = document.querySelector('.recipe-container');
 const generateButton = document.querySelector('.generate-button');
 
+recipeContainer.style.opacity = 0
+recipeContainer.style.transition = 'opacity 1s cubic-bezier(0.39, 0.575, 0.565, 1)';
+
 const infoText = document.createElement('div');
 document.body.appendChild(infoText);
 infoText.innerHTML = `
@@ -48,4 +51,8 @@ generateButton.addEventListener('click', () => {
         .catch(error => {
             console.error('Error:', error);
         });
+
+    setTimeout(() => {
+        recipeContainer.style.opacity = 1;
+    }, 500);
 });
