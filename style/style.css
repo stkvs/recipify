@@ -13,6 +13,7 @@
     --parchment: #f0ead2ff;
     --tea-green: #dde5b6ff;
     --olivine: #adc178ff;
+    --darker-olivine: #4A3A00;
     --chamoisee: #a98467ff;
     --umber: #6c584cff;
 
@@ -36,6 +37,7 @@
 
 body {
     background-color: var(--olivine);
+    color: var(--darker-olivine);
     display: flex;
     gap: 64px;
     align-items: center;
