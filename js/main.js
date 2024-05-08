@@ -1,11 +1,20 @@
 const recipeContainer = document.querySelector('.recipe-container');
 const generateButton = document.querySelector('.generate-button');
 
+const infoText = document.createElement('div');
+document.body.appendChild(infoText);
+infoText.innerHTML = `
+                        <p>Welcome to Recipify!</p>
+                        <p>Press Generate to display a random recipe!</p>
+                        `;
+infoText.classList.add('infoText');
+
 window.onload = () => {
     recipeContainer.style.display = 'none';
 };
 
 generateButton.addEventListener('click', () => {
+    infoText.style.display = "none";
     recipeContainer.style.display = 'flex';
 
     fetch('js/data/RecipeDataset.json')
