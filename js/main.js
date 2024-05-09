@@ -3,13 +3,9 @@ const generateButton = document.querySelector('.generate-button');
 
 recipeContainer.style.opacity = 0
 recipeContainer.style.transition = 'opacity 1s cubic-bezier(0.39, 0.575, 0.565, 1)';
-
-document.addEventListener('DOMContentLoaded', () => {
-    recipeContainer.style.display = 'none';
-});
+recipeContainer.style.display = 'none';
 
 generateButton.addEventListener('click', () => {
-    // infoText.style.display = "none";
     recipeContainer.style.display = 'flex';
     recipeContainer.style.opacity = 1;
 
