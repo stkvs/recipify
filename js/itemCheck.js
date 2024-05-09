@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkbox = itemDiv.querySelector('input[type="checkbox"]');
         
         itemDiv.addEventListener('click', () => {
-            checkbox.checked = !checkbox.checked;
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked;
+            }
         });
     });
 });

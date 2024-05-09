@@ -4,18 +4,9 @@ const generateButton = document.querySelector('.generate-button');
 recipeContainer.style.opacity = 0
 recipeContainer.style.transition = 'opacity 1s cubic-bezier(0.39, 0.575, 0.565, 1)';
 
-// const infoText = document.createElement('div');
-// document.body.appendChild(infoText);
-// infoText.innerHTML = `
-//                         <p>Welcome to Recipify!</p>
-//                         <p>Press Generate to display a random recipe!</p>
-//                         `;
-// infoText.classList.add('infoText');
-// // infoText.style.display = 'none';
-
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
     recipeContainer.style.display = 'none';
-};
+});
 
 generateButton.addEventListener('click', () => {
     // infoText.style.display = "none";
