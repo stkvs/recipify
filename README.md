@@ -1,3 +1,5 @@
+<img src="./assets/recipify-logo.png" alt="Recipify-logo" style="width: 200px; height: 200px"/>
+
 # Recipify
 > Are you ever stuck for recipes? Check this out ^-^
 
