@@ -171,6 +171,8 @@ p {
 
 .category-title input {
     background-color: var(--olivine);
+    max-height: 16px;
+    height: 100%;
     padding: 8px;
     border: none;
     border-radius: 8px;
@@ -185,6 +187,7 @@ p {
     justify-content: space-between;
     align-items: center;
     width: 150px;
+    height: 48px;
     text-align: center;
     background-color: var(--vibrant-chamoisee);
     border: 2px solid var(--vibrant-umber);
@@ -223,7 +226,11 @@ footer span {
         align-items: center;
     }
     .ingredient-category {
-        width: min-content;
+        min-width: 85vw;
+    }
+
+    .search-input {
+        width: 33%;
     }
 
     footer p {

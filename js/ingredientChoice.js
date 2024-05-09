@@ -17,6 +17,7 @@ fetch('./js/data/IngredientsJSON.json')
         categories.forEach(category => {
             const categoryDiv = document.createElement('div');
             categoryDiv.classList.add('ingredient-category');
+            categoryDiv.id = `${category}-category`;
 
             const categoryTitle = document.createElement('div')
             categoryTitle.classList.add('category-title');
@@ -28,6 +29,7 @@ fetch('./js/data/IngredientsJSON.json')
 
             const searchInput = document.createElement('input');
             searchInput.classList.add('search-input');
+            searchInput.id = `${category}-search`;
             searchInput.setAttribute('type', 'text');
             searchInput.setAttribute('placeholder', `Search ${category}`);
             categoryTitle.appendChild(searchInput);
@@ -57,26 +59,4 @@ fetch('./js/data/IngredientsJSON.json')
     })
     .catch(error => {
         console.error('Error fetching ingredients:', error);
-    });
-
-    const searchInputs = document.querySelectorAll('.search-input');
-
-    searchInputs.forEach(searchInput => {
-        searchInput.addEventListener('input', searchItems);
-        console.log(searchInput.value.toLowerCase())
-
-        function searchItems() {
-            const searchTerm = searchInput.value.toLowerCase();
-            const items = document.querySelectorAll('.item');
-
-            items.forEach(item => {
-                const itemName = item.querySelector('p').textContent.toLowerCase();
-
-                if (itemName.includes(searchTerm)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
     });

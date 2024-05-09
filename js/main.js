@@ -11,6 +11,7 @@ infoText.innerHTML = `
                         <p>Press Generate to display a random recipe!</p>
                         `;
 infoText.classList.add('infoText');
+// infoText.style.display = 'none';
 
 window.onload = () => {
     recipeContainer.style.display = 'none';
