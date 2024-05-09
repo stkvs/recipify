@@ -13,6 +13,8 @@
     --parchment: #f0ead2ff;
     --tea-green: #dde5b6ff;
     --olivine: #adc178ff;
+    --slight-dark-olivine: rgb(125, 141, 82);
+    --darker-olivine: #4A3A00;
     --chamoisee: #a98467ff;
     --umber: #6c584cff;
 
@@ -36,6 +38,7 @@
 
 body {
     background-color: var(--olivine);
+    color: var(--darker-olivine);
     display: flex;
     gap: 64px;
     align-items: center;
@@ -140,6 +143,7 @@ p {
 }
 
 .infoText {
+    opacity: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -149,6 +153,58 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+}
+
+.ingredient-selector {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 64px;
+}
+
+.category-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-title input {
+    background-color: var(--olivine);
+    max-height: 16px;
+    height: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+}
+
+.category-title input::placeholder {
+    color: var(--darker-olivine);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    height: 48px;
+    text-align: center;
+    background-color: var(--vibrant-chamoisee);
+    border: 2px solid var(--vibrant-umber);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.ingredient-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    height: 250px;
+    overflow-y: scroll;
+    background-color: var(--slight-dark-olivine);
+    padding: 16px;
+    border-radius: 16px;
+    justify-content: center;
 }
 
 footer {
@@ -166,6 +222,17 @@ footer span {
 }
 
 @media (pointer: coarse) or (max-width: 768px) {
+    .ingredient-selector {
+        align-items: center;
+    }
+    .ingredient-category {
+        min-width: 85vw;
+    }
+
+    .search-input {
+        width: 33%;
+    }
+
     footer p {
         font-size: 0.75rem;
     }
