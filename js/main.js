@@ -105,7 +105,11 @@ function generateRecipes(selectedIngredients) {
                             </div>
                         `;
                     } else {
-                        console.log(false);
+                        recipeContainer.innerHTML = `
+                            <div class="error-message">
+                                <p>No recipes found with the selected ingredients.</p>
+                            </div>
+                        `;
                     }
 
                 } catch (error) {
