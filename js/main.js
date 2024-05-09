@@ -40,26 +40,30 @@ function generateRecipes(selectedIngredients) {
                 const randomIndex = Math.floor(Math.random() * data.length);
                 const randomRecipe = data[randomIndex];
 
-                recipeContainer.innerHTML = `
-                    <div class="recipe-title">
-                        <h2 class="recipe-name">${randomRecipe.Name}</h2>
-                        <p class="recipe-author">${randomRecipe.Author}</p>
-                    </div>
-                    <hr>
-                    <div class="ingredients-container">
-                        <h3>Ingredients:</h3>
-                        <ul class="ingredients-list">
-                            ${randomRecipe.Ingredients.map(ingredient => `<li><b>${ingredient.Quantity}</b> ${ingredient.Ingredient}</b></li>`).join('')}
-                        </ul>
-                    </div>
-                    <hr>
-                    <div class="method-container">
-                        <h3>Method:</h3>
-                        <ul class="method-list">
-                            ${randomRecipe.Method.map(step => `<li>${step}</li>`).join(' ')}
-                        </ul>
-                    </div>
-                `;
+                recipeContainer.innerHTML = `<div class="lds-facebook"><div></div><div></div><div></div></div>`;
+
+                setTimeout(() => {
+                    recipeContainer.innerHTML = `
+                        <div class="recipe-title">
+                            <h2 class="recipe-name">${randomRecipe.Name}</h2>
+                            <p class="recipe-author">${randomRecipe.Author}</p>
+                        </div>
+                        <hr>
+                        <div class="ingredients-container">
+                            <h3>Ingredients:</h3>
+                            <ul class="ingredients-list">
+                                ${randomRecipe.Ingredients.map(ingredient => `<li><b>${ingredient.Quantity}</b> ${ingredient.Ingredient}</b></li>`).join('')}
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="method-container">
+                            <h3>Method:</h3>
+                            <ul class="method-list">
+                                ${randomRecipe.Method.map(step => `<li>${step}</li>`).join(' ')}
+                            </ul>
+                        </div>
+                    `;
+                }, 1000);
             } else if (filteredRecipes.length === 0) {
                 console.log(filteredRecipes);
                 console.log(selectedIngredients);
@@ -71,32 +75,40 @@ function generateRecipes(selectedIngredients) {
                     if (randomRecipe && randomRecipe.Ingredients.some(ingredient => selectedIngredients.some(selectedIngredient => ingredient.Ingredient.includes(selectedIngredient)))) {
                         console.log(randomRecipe)
 
-                        recipeContainer.innerHTML = `
-                            <div class="recipe-title">
-                                <h2 class="recipe-name">${randomRecipe.Name}</h2>
-                                <p class="recipe-author">${randomRecipe.Author}</p>
-                            </div>
-                            <hr>
-                            <div class="ingredients-container">
-                                <h3>Ingredients:</h3>
-                                <ul class="ingredients-list">
-                                    ${randomRecipe.Ingredients.map(ingredient => `<li><b>${ingredient.Quantity}</b> ${ingredient.Ingredient}</b></li>`).join('')}
-                                </ul>
-                            </div>
-                            <hr>
-                            <div class="method-container">
-                                <h3>Method:</h3>
-                                <ul class="method-list">
-                                    ${randomRecipe.Method.map(step => `<li>${step}</li>`).join(' ')}
-                                </ul>
-                            </div>
-                        `;
+                        recipeContainer.innerHTML = `<div class="lds-facebook"><div></div><div></div><div></div></div>`;
+
+                        setTimeout(() => {
+                            recipeContainer.innerHTML = `
+                                <div class="recipe-title">
+                                    <h2 class="recipe-name">${randomRecipe.Name}</h2>
+                                    <p class="recipe-author">${randomRecipe.Author}</p>
+                                </div>
+                                <hr>
+                                <div class="ingredients-container">
+                                    <h3>Ingredients:</h3>
+                                    <ul class="ingredients-list">
+                                        ${randomRecipe.Ingredients.map(ingredient => `<li><b>${ingredient.Quantity}</b> ${ingredient.Ingredient}</b></li>`).join('')}
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="method-container">
+                                    <h3>Method:</h3>
+                                    <ul class="method-list">
+                                        ${randomRecipe.Method.map(step => `<li>${step}</li>`).join(' ')}
+                                    </ul>
+                                </div>
+                            `;
+                        }, 1000);
                     } else {
-                        recipeContainer.innerHTML = `
-                            <div class="error-message">
-                                <p>Couldn't generate a recipe, please try generating again</p>
-                            </div>
-                        `;
+                        recipeContainer.innerHTML = `<div class="lds-facebook"><div></div><div></div><div></div></div>`;
+
+                        setTimeout(() => {
+                            recipeContainer.innerHTML = `
+                                <div class="error-message">
+                                    <p>Couldn't generate a recipe, please try generating again</p>
+                                </div>
+                            `;
+                        }, 1000);
                     }
 
                 } catch (error) {
