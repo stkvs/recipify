@@ -1,9 +1,9 @@
-![Recipiy recipe](./assets/recipe.png)
-
 # Recipify
 > Are you ever stuck for recipes? This is for you.
 
 **Recipify** is a non-api run recipe generator which uses BBCGoodFoods and contributors recipe datasets, some data manipultaion by Python and Javascript to append ingredients to the page, which can be used to narrow down recipe generation.
+
+![Recipiy recipe](./assets/recipe.png)
 
 ## Features
 
@@ -12,7 +12,7 @@
 * Ingredients Search
 * Contribution based (Submit recipes through the site)
 
-![Select ingredients](./assets/select-ingredients.png")
+![Select ingredients](./assets/select-ingredients.png)
 
 ## Bugs
 
