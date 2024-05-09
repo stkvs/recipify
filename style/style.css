@@ -301,8 +301,10 @@ footer span {
     .ingredient-selector {
         align-items: center;
     }
+
     .ingredient-category {
         min-width: 85vw;
+        margin-bottom: 64px;
     }
 
     .search-input {
