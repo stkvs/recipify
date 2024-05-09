@@ -32,5 +32,5 @@ If you encounter a bug submit an issue request to this repository.
     mantas@stkvs.com directly instead of using issue tracker. We value your effort
     to improve the security and privacy of this project!
 - Related projects:
-  - Your other project: https://github.com/stkvs/interactive-saturn
+  - My project: https://github.com/stkvs/interactive-saturn
   - Another project: https://github.com/saolghra/atmosify | https://atmosify.tech
