@@ -107,7 +107,7 @@ function generateRecipes(selectedIngredients) {
                     } else {
                         recipeContainer.innerHTML = `
                             <div class="error-message">
-                                <p>No recipes found with the selected ingredients.</p>
+                                <p>Couldn't generate a recipe, please try generating again</p>
                             </div>
                         `;
                     }
