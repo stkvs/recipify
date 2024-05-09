@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-    try {
+window.onload = () => {
+    setTimeout(() => {
         const searchInputs = document.querySelectorAll('.search-input');
 
         searchInputs.forEach(searchInput => {
@@ -23,20 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        console.log("Ingredients Loaded");
-    } catch (error) {
-        console.error("An error occurred:", error);
-    }
-    
-    const itemDivs = document.querySelectorAll('.item');
-
-    itemDivs.forEach(itemDiv => {
-        const checkbox = itemDiv.querySelector('input[type="checkbox"]');
-        
-        itemDiv.addEventListener('click', () => {
-            if (checkbox) {
-                checkbox.checked = !checkbox.checked;
+        const itemDivs = document.querySelectorAll('.item');
+        itemDivs.forEach(itemDiv => {
+            const checkbox = itemDiv.querySelector('input[type="checkbox"]');
+            
+            if (checkbox) { // Add a check to ensure checkbox is not null
+                itemDiv.addEventListener('click', () => {
+                    console.log("Checkbox Clicked")
+                    checkbox.checked = !checkbox.checked;
+                });
             }
         });
-    });
-});
+    }, 2000);
+};
+
+console.log("Ingredients Loaded + Search Check Function Loaded");
