@@ -20,10 +20,9 @@ infoBox.innerHTML = `
     </div>
     <p>Please note this is still majorly in Beta and may experience some issues</p>
     <div class="current-issues">
-        <h4>Patch: 1.1.8</h4>
+        <h4>Patch: 1.2.1</h4>
         <ul>
             <li><p>This will generate a recipe along the selection of your ingredients but will add extra ingredients</p></li>
-            <li><p>The Searchbars do not always work</p></li>
         </ul>
     </div>
     <p>If you have any recipes you would like me to add contact me via <a href="mailto:mantas@stkvs.com">My Email</a></p>
