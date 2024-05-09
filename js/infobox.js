@@ -26,7 +26,7 @@ infoBox.innerHTML = `
             <li><p>The Searchbars do not always work</p></li>
         </ul>
     </div>
-    <p>If you have any recipes you would like me to add contact me via <a href="mailto:stkvs@gmail.com">My Email</a></p>
+    <p>If you have any recipes you would like me to add contact me via <a href="mailto:mantas@stkvs.com">My Email</a></p>
 `;
 
 // Add event listener to the button
