@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     try {
         const searchInputs = document.querySelectorAll('.search-input');
 
