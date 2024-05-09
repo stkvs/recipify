@@ -27,7 +27,7 @@ If you encounter a bug submit an issue request to this repository.
 - Repository: https://github.com/stkvs/recipify/
 - Issue tracker: https://github.com/stkvs/recipify/issues
   - In case of sensitive bugs like security vulnerabilities, please contact
-    stkvs@gmail.com directly instead of using issue tracker. We value your effort
+    mantas@stkvs.com directly instead of using issue tracker. We value your effort
     to improve the security and privacy of this project!
 - Related projects:
   - Your other project: https://github.com/stkvs/interactive-saturn
