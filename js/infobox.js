@@ -14,13 +14,15 @@ cover.classList.add('cover');
 document.body.appendChild(cover);
 
 infoBox.innerHTML = `
+    <p class="beta-text">Please note this is still majorly in Beta and may experience some issues</p>
     <div class="info-box-title">
         <button class="close-button">x</button>
         <h2>Welcome to Recipify!</h2>
     </div>
-    <p>Please note this is still majorly in Beta and may experience some issues</p>
+    <p>Select some ingredients and generate to generate a recipe based on the selected ingredients</p>
+    <p class="italic-p"><i>If you're feeling adventurous and want a random recipe don't select any ingredients and click Generate</i></p>
     <div class="current-issues">
-        <h4>Patch: 1.2.1</h4>
+        <h4>Patch: 1.2.2</h4>
         <ul>
             <li><p>This will generate a recipe along the selection of your ingredients but will add extra ingredients</p></li>
         </ul>

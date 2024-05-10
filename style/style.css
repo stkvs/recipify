@@ -64,6 +64,21 @@ button:hover {
     filter: contrast(1.5);
 }
 
+.button-container {
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.next-button, .back-button {
+    position: relative;
+    margin: 0;
+    display: block;
+    font-size: 0.75rem;
+}
+
 .recipe-container {
     position: relative;
     z-index: 2;
@@ -143,6 +158,15 @@ p {
     color: var(--vibrant-umber);
 }
 
+.beta-text {
+    font-size: 0.5rem;
+    text-align: center;
+}
+
+.info-box p i {
+    font-size: 0.5rem;
+}
+
 .infoText {
     opacity: 0;
     position: absolute;
@@ -154,6 +178,10 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+}
+
+.info-box p {
+    font-size: 0.75rem;
 }
 
 .ingredient-selector {
