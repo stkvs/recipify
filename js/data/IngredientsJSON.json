@@ -11,6 +11,7 @@
     "thyme",
     "oregano",
     "basil",
+    "parsley",
     "rosemary",
     "coriander",
     "cardamom",
@@ -18,6 +19,7 @@
     "clove",
     "saffron",
     "allspice",
+    "italian herb",
     "anise",
     "bay leaves",
     "caraway seed",
@@ -70,7 +72,6 @@
     "grain of paradise",
     "cubeb peppercorn",
     "tasmanian pepperberry",
-    "voatsiperifery peppercorn",
     "timut peppercorn"
   ],
   "Fruits": [
@@ -223,8 +224,7 @@
     "semolina",
     "tapioca",
     "wheat germ",
-    "whole wheat flour",
-    "white whole wheat flour",
+    "flour",
     "buckwheat",
     "millet",
     "amaranth",

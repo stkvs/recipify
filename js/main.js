@@ -1,5 +1,7 @@
 const recipeContainer = document.querySelector('.recipe-container');
 const generateButton = document.querySelector('.generate-button');
+const notification = document.querySelector('.notification');
+notification.style.display = 'none';
 
 recipeContainer.style.opacity = 0
 recipeContainer.style.transition = 'opacity 1s cubic-bezier(0.39, 0.575, 0.565, 1)';
@@ -26,6 +28,28 @@ function checkSelectedIngredients() {
     }
 }
 
+function copyToClipboard() {
+    const notifcationText = document.querySelector('.notification');
+    const recipeText = recipeContainer.innerText;
+    try {
+        notifcationText.innerHTML = 'Copied to clipboard!';
+        notifcationText.style.display = 'block';
+        notification.style.opacity = 1;
+        navigator.clipboard.writeText(recipeText.replace(/Next Recipe|Previous Recipe/g, ''));
+    } catch (error) {
+        notifcationText.innerHTML = 'Error copying to clipboard:', error;
+        notifcationText.style.display = 'block';
+        console.error('Error copying to clipboard:', error);
+    }
+
+    setTimeout(() => {
+        notification.style.opacity = 0;
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 500);
+    }, 2000);
+}
+
 function generateRandomRecipe() {
     try {
         fetch('./js/data/RecipeDataset.json')
@@ -38,8 +62,13 @@ function generateRandomRecipe() {
             setTimeout(() => {
                 recipeContainer.innerHTML = `
                     <div class="recipe-title">
-                        <h2 class="recipe-name">${randomRecipe.Name}</h2>
-                        <p class="recipe-author">${randomRecipe.Author}</p>
+                        <div class="text">
+                            <h2 class="recipe-name">${randomRecipe.Name}</h2>
+                            <p class="recipe-author">${randomRecipe.Author}</p>
+                        </div>
+                        <button class="copy-clipboard">
+                            <i class='bx bx-clipboard' ></i>
+                        </button>
                     </div>
                     <hr>
                     <div class="ingredients-container">
@@ -56,11 +85,15 @@ function generateRandomRecipe() {
                         </ul>
                     </div>
                 `;
+
+                const copyButton = document.querySelector('.copy-clipboard');
+                copyButton.addEventListener('click', copyToClipboard);
             }, 1000);
         });
     } catch (error) {
         console.error(error);
     };
+
 }
 
 function searchRecipes(selectedIngredients) {
@@ -99,8 +132,14 @@ function sortRecipesBySimilarity(selectedIngredients, filteredRecipes) {
 function displayRecipe(sortedRecipes, recipeIndex) {
     const recipeHTML = `
         <div class="recipe-title">
-            <h2 class="recipe-name">${sortedRecipes[recipeIndex].Name}</h2>
-            <p class="recipe-author">${sortedRecipes[recipeIndex].Author}</p>
+            <div class="text">
+                <h2 class="recipe-name">${sortedRecipes[recipeIndex].Name}</h2>
+                <p class="recipe-author">${sortedRecipes[recipeIndex].Author}</p>
+            </div>
+
+            <button class="copy-clipboard">
+                <i class='bx bx-clipboard' ></i>
+            </button>
         </div>
         <hr>
         <div class="ingredients-container">
@@ -127,6 +166,7 @@ function displayRecipe(sortedRecipes, recipeIndex) {
 
     const nextButton = document.querySelector('.next-button');
     const backButton = document.querySelector('.back-button');
+    const copyButton = document.querySelector('.copy-clipboard');
 
     if (recipeIndex <= 0) {
         let Button = document.querySelector('.back-button');
@@ -146,6 +186,8 @@ function displayRecipe(sortedRecipes, recipeIndex) {
         recipeIndex--;
         displayRecipe(sortedRecipes, recipeIndex);
     });
+
+    copyButton.addEventListener('click', copyToClipboard);
 }
 
 generateButton.addEventListener('click', () => {
@@ -154,4 +196,3 @@ generateButton.addEventListener('click', () => {
 
     checkSelectedIngredients();
 });
-
