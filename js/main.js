@@ -110,7 +110,21 @@ function searchRecipes(selectedIngredients) {
             });
 
             console.log(filteredRecipes);
-            sortRecipesBySimilarity(selectedIngredients, filteredRecipes)
+            if (filteredRecipes.length === 0) {
+                notification.innerHTML = 'No recipes found with the selected ingredients, genetating a random recipe instead!';
+                notification.style.opacity = 1;
+                notification.style.display = 'block';
+
+                setTimeout(() => {
+                    notification.style.opacity = 0;
+                    setTimeout(() => {
+                        notification.style.display = 'none';
+                    }, 500);
+                }, 2000);
+                generateRandomRecipe();
+            } else {
+                sortRecipesBySimilarity(selectedIngredients, filteredRecipes);
+            }
         })
         .catch(error => {
             console.error('Error fetching recipe data:', error);
