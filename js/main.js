@@ -86,14 +86,18 @@ function generateRandomRecipe() {
                     </div>
                 `;
 
-                const copyButton = document.querySelector('.copy-clipboard');
-                copyButton.addEventListener('click', copyToClipboard);
+                if (recipeContainer.innerHTML.trim() !== '') {
+                    console.log("Recipe is loaded")
+                    setTimeout(() => {
+                        let copyButton = document.querySelector('.copy-clipboard');
+                        copyButton.addEventListener('click', copyToClipboard);
+                    }, 1000);
+                }
             }, 1000);
         });
     } catch (error) {
         console.error(error);
     };
-
 }
 
 function searchRecipes(selectedIngredients) {
