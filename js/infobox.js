@@ -21,7 +21,7 @@ infoBox.innerHTML = `
     <p>Select some ingredients and generate to generate a recipe based on the selected ingredients</p>
     <p class="italic-p"><i>If you're feeling adventurous and want a random recipe don't select any ingredients and click Generate</i></p>
     <div class="current-issues">
-        <h4>Patch: 1.2.3</h4>
+        <h4>Patch: 1.2.4</h4>
         <ul>
             <li><p>This will generate a recipe along the selection of your ingredients but will add extra ingredients</p></li>
         </ul>
